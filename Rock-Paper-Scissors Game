@@ -1,0 +1,34 @@
+import random
+
+options = ("rock", "paper", "scissors")
+playing = True
+
+print("\nWelcome to my Rock-Paper-Scissor Game\n") 
+
+while playing:
+    
+    you = input("Enter your choice (rock, paper, scissors): ")
+    computer = random.choice(options)
+
+    if you not in options:
+      print("Choose the correct option !")
+      continue
+
+    print(f"You: {you}")
+    print(f"Computer: {computer}")
+
+    if you == computer:
+        print("It's a tie!")
+    elif you == "rock" and computer == "scissors":
+        print("Woohoo ! You win this round.")
+    elif you == "paper" and computer == "rock":
+        print("Woohoo ! You win this round.")
+    elif you == "scissors" and computer == "paper":
+        print("Woohoo ! You win this round.")
+    else:
+        print("Oh noo ! You lose this round.")
+
+    if not input("Wanna play again? (y/n): ").lower() == "y":
+        playing = False
+
+print("Alright, game over. Thanks for playing!")
